@@ -23,14 +23,19 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Discover"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{
+        activeTintColor: Colors[colorScheme].tint,
+        tabStyle: {
+          paddingVertical: 6,
+        },
+      }}
     >
       <BottomTab.Screen
         name="Discover"
         component={DiscoverNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="md-compass" color={color} />
           ),
         }}
       />
@@ -39,7 +44,7 @@ export default function BottomTabNavigator() {
         component={SuggestNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="md-chatboxes" color={color} />
           ),
         }}
       />
@@ -48,7 +53,7 @@ export default function BottomTabNavigator() {
         component={AddGroupNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="md-people" color={color} />
           ),
         }}
       />
@@ -59,7 +64,7 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={25} style={{ marginBottom: 4 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
