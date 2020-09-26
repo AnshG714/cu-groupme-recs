@@ -1,22 +1,36 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function GroupOwnerScreen() {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Group Owner</Text>
+      </View>
+      <Text style={styles.bodyText}>
+        Want to add your group to this app? Click on the button below and fill
+        out the form!
+      </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: 32,
+    paddingHorizontal: 24,
   },
   title: {
-    fontSize: 20,
+    fontSize: 32,
     fontWeight: 'bold',
+  },
+  titleContainer: {
+    paddingBottom: 24,
+  },
+  bodyText: {
+    fontSize: 18,
   },
   separator: {
     marginVertical: 30,
