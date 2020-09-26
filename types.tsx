@@ -11,6 +11,7 @@ export type BottomTabParamList = {
 
 export type DiscoverParamList = {
   DiscoverScreen: undefined;
+  GroupDetailScreen: undefined;
 };
 
 export type SuggestParamList = {

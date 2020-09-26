@@ -8,6 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import DiscoverScreen from '../screens/DiscoverScreen';
 import SuggestScreen from '../screens/SuggestScreen';
 import AddGroupScreen from '../screens/AddGroupScreen';
+import GroupDetailScreen from '../screens/GroupDetailScreen';
 import {
   AddGroupParamList,
   BottomTabParamList,
@@ -77,6 +78,11 @@ function DiscoverNavigator() {
       <DiscoverStack.Screen
         name="DiscoverScreen"
         component={DiscoverScreen}
+        options={{ headerShown: false }}
+      />
+      <DiscoverStack.Screen
+        name="GroupDetailScreen"
+        component={GroupDetailScreen}
         options={{ headerShown: false }}
       />
     </DiscoverStack.Navigator>
