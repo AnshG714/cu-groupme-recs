@@ -5,9 +5,15 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import DiscoverScreen from '../screens/DiscoverScreen';
+import SuggestScreen from '../screens/SuggestScreen';
+import GroupOwnerScreen from '../screens/GroupOwnerScreen';
+import {
+  BottomTabParamList,
+  DiscoverParamList,
+  GroupOwnerParamList,
+  SuggestParamList,
+} from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,12 +22,12 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Discover"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Discover"
+        component={DiscoverNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -29,8 +35,17 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Suggest"
+        component={SuggestNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ios-code" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Group Owner"
+        component={GroupOwnerNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -49,30 +64,44 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const DiscoverStack = createStackNavigator<DiscoverParamList>();
 
-function TabOneNavigator() {
+function DiscoverNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <DiscoverStack.Navigator>
+      <DiscoverStack.Screen
+        name="DiscoverScreen"
+        component={DiscoverScreen}
+        options={{ headerShown: false }}
       />
-    </TabOneStack.Navigator>
+    </DiscoverStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const SuggestStack = createStackNavigator<SuggestParamList>();
 
-function TabTwoNavigator() {
+function SuggestNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <SuggestStack.Navigator>
+      <SuggestStack.Screen
+        name="SuggestScreen"
+        component={SuggestScreen}
+        options={{ headerShown: false }}
       />
-    </TabTwoStack.Navigator>
+    </SuggestStack.Navigator>
+  );
+}
+
+const GroupOwnerStack = createStackNavigator<GroupOwnerParamList>();
+
+function GroupOwnerNavigator() {
+  return (
+    <GroupOwnerStack.Navigator>
+      <GroupOwnerStack.Screen
+        name="GroupOwnerScreen"
+        component={GroupOwnerScreen}
+        options={{ headerShown: false }}
+      />
+    </GroupOwnerStack.Navigator>
   );
 }

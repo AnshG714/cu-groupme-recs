@@ -4,14 +4,19 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Discover: undefined;
+  Suggest: undefined;
+  'Group Owner': undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type DiscoverParamList = {
+  DiscoverScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type SuggestParamList = {
+  SuggestScreen: undefined;
+};
+
+export type GroupOwnerParamList = {
+  GroupOwnerScreen: undefined;
 };
