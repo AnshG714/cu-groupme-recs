@@ -3,11 +3,11 @@ import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
-export default function GroupOwnerScreen() {
+export default function AddGroupScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Group Owner</Text>
+        <Text style={styles.title}>Add Group</Text>
       </View>
       <Text style={styles.bodyText}>
         Want to add your group to this app? Click on the button below and fill

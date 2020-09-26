@@ -7,11 +7,11 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import DiscoverScreen from '../screens/DiscoverScreen';
 import SuggestScreen from '../screens/SuggestScreen';
-import GroupOwnerScreen from '../screens/GroupOwnerScreen';
+import AddGroupScreen from '../screens/AddGroupScreen';
 import {
+  AddGroupParamList,
   BottomTabParamList,
   DiscoverParamList,
-  GroupOwnerParamList,
   SuggestParamList,
 } from '../types';
 
@@ -44,8 +44,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Group Owner"
-        component={GroupOwnerNavigator}
+        name="Add Group"
+        component={AddGroupNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -92,16 +92,16 @@ function SuggestNavigator() {
   );
 }
 
-const GroupOwnerStack = createStackNavigator<GroupOwnerParamList>();
+const AddGroupStack = createStackNavigator<AddGroupParamList>();
 
-function GroupOwnerNavigator() {
+function AddGroupNavigator() {
   return (
-    <GroupOwnerStack.Navigator>
-      <GroupOwnerStack.Screen
-        name="GroupOwnerScreen"
-        component={GroupOwnerScreen}
+    <AddGroupStack.Navigator>
+      <AddGroupStack.Screen
+        name="AddGroupScreen"
+        component={AddGroupScreen}
         options={{ headerShown: false }}
       />
-    </GroupOwnerStack.Navigator>
+    </AddGroupStack.Navigator>
   );
 }

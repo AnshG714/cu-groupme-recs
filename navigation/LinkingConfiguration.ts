@@ -16,9 +16,9 @@ export default {
               SuggestScreen: 'two',
             },
           },
-          GroupOwner: {
+          AddGroup: {
             screens: {
-              GroupOwnerScreen: 'three',
+              AddGroupScreen: 'three',
             },
           },
         },

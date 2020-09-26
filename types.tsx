@@ -6,7 +6,7 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   Discover: undefined;
   Suggest: undefined;
-  'Group Owner': undefined;
+  'Add Group': undefined;
 };
 
 export type DiscoverParamList = {
@@ -17,6 +17,6 @@ export type SuggestParamList = {
   SuggestScreen: undefined;
 };
 
-export type GroupOwnerParamList = {
-  GroupOwnerScreen: undefined;
+export type AddGroupParamList = {
+  AddGroupScreen: undefined;
 };
