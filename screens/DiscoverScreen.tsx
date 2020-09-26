@@ -1,13 +1,22 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
-import { Text, View } from '../components/Themed';
+import { Text, View, StyleSheet } from 'react-native';
+import GroupCard from '../components/GroupCard';
+import data from './data';
 
 export default function DiscoverScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Discover</Text>
+        {data.map(({ img, title, desc, tags, members }) => (
+          <GroupCard
+            img={img}
+            title={title}
+            desc={desc}
+            tags={tags}
+            members={members}
+          />
+        ))}
       </View>
     </View>
   );
