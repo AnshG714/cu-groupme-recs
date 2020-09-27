@@ -30,6 +30,7 @@ export default function DiscoverScreen({
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate('GroupDetailScreen', {
+                      img,
                       title,
                       desc,
                       tags,
